@@ -1,23 +1,24 @@
-#include <iostream> 
+#include <iostream>
 using namespace std;
 
-int f(int n){
-    if (n == 1){
-        return 0;
+void f(int n){
+    int a = 0, b = 1;
+
+    for (int i = 1; i <= n; i++){
+        cout << a << endl;
+        int c = a + b;
+        a = b;
+        b = c;
+
     }
-    if (n == 2){
-        return 1;
-    }
-    return f(n - 1) + f(n - 2);
 }
 
 int main(){
     int n;
-    cout << "Введите номер числа Фибоначчи: ";
+    cout << "Введите количество чисел Фибоначчи: ";
     cin >> n;
-    
-    int r = f(n);
-    cout << "fib(" << n << ") = " << r << endl;
+
+    f(n);
 
     return 0;
 }
